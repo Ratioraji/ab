@@ -18,7 +18,7 @@ export function computeSummary(positions: Position[]): PortfolioSummary {
     0
   );
 
-  const averagePricePerTonne = totalValue / positions.length;
+  const averagePricePerTonne = totalValue / totalTonnes;
 
   return {
     totalTonnes,
