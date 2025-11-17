@@ -69,7 +69,19 @@ Enable users to efficiently track, manage, and analyze their carbon credit portf
   * Keeps **business logic separate** from HTTP handling.
   * Follows **SOLID principles** and makes testing easier.
 
-**5. Trade-offs / Things not done**
+**5. Testing – Status Filter**
+
+* **Purpose:** Verify that summary calculations respect the `status` filter and handle unknown statuses gracefully.
+* **Tests Added:**
+
+  * **Status filtering** – confirms only positions matching the requested status are included in the summary.
+  * **Unknown status handling** – ensures that an unsupported status returns a zeroed summary instead of throwing an error.
+* **Why Needed:**
+
+  * Validates correctness of filtering logic for user-facing summaries.
+  * Ensures API is forgiving and robust, providing predictable behavior for invalid input.
+
+**6. Trade-offs / Things not done**
 
 * Did not implement **real-time aggregation** or **streaming updates** using graphQL subscriptions for summary calculations; acceptable for the current dataset size.
 * Redis caching and worker threads were mentioned as **improvements for scalability**, but not implemented in this iteration due to time constraints.
