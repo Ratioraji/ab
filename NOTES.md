@@ -83,7 +83,8 @@ Enable users to efficiently track, manage, and analyze their carbon credit portf
 
 **6. Trade-offs / Things not done**
 
-* Did not implement **real-time aggregation** or **streaming updates** using graphQL subscriptions for summary calculations; acceptable for the current dataset size.
+* Did not implement real-time aggregation or streaming updates for summary calculations; for future scalability, this could be achieved using technologies such as GraphQL subscriptions or WebSockets, but it was deemed unnecessary for the current dataset size.
+
 * Redis caching and worker threads were mentioned as **improvements for scalability**, but not implemented in this iteration due to time constraints.
 
 
